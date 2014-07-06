@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+img {
+	height: 124px;
+}
+
+img:hover {
+	height: 150px;
+}
+
+.inner-child {
+	width: 154px;
+	height: 141px;
+}
+
+.inner {
+	margin: 0 auto;
+}
+
+.fontst{font-weight: bold;
+font-size: 14px;}
+</style>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/normalizelogin.css" />
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/stylelogin.css" />
+
+</h:head>
+<body>
+
+	<section class="addform cf">
+	<table border="0" align="center">
+		<tr style="text-align: center;">
+			<td><div class="inner-child">
+					<a href="#{request.contextPath}/faces/showemployees.xhtml"><img src="user.png" /></a>
+				</div></td>
+			<td><div class="inner-child">
+					<a href=""><img src="task.png" /></a>
+				</div></td>
+			<td><div class="inner-child">
+					<a href=""><img src="project.png" /></a>
+				</div></td>
+			<td><div class="inner-child">
+					<a href=""><img src="affectation.png" /></a>
+				</div></td>
+		</tr>
+		<tr style="text-align: center;">
+			<td class="fontst">Employees</td>
+			<td class="fontst">Tasks</td>
+			<td class="fontst">Project</td>
+			<td class="fontst">Affectation</td>
+		</tr>
+	</table>
+
+	</section>
+
+
+
+	<!-- <div class="inner">
+		<div class="inner-child"><img src="user.png" /></div>
+		<div class="inner-child"><img src="task.png" /></div>
+		<div class="inner-child"><img src="project.png" /></div>
+		<div class="inner-child"><img src="affectation.png" /></div>
+	
+	</div>-->
+
+
+
+</body>
+</html>

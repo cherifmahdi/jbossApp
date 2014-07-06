@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/normalizelogin.css" />
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/stylelogin.css" />
+</h:head>
+<body>
+
+<section class="addform cf">	
+	
+	<p:fieldset legend="Add Employee" id="filedsetform">  
+
+		<h:form>
+			<h:panelGrid border="1" columns="2" styleClass="innertable">
+				<h:outputText value="name employee"></h:outputText>
+				<h:inputText value="#{gestionCtr.employee.nameEmployee}" />
+				<h:outputText value="username"></h:outputText>
+				<h:inputText value="#{gestionCtr.employee.username}" />
+				<h:outputText value="password"></h:outputText>
+				<h:inputText value="#{gestionCtr.employee.password}" />
+				<h:outputText value="job"></h:outputText>
+				<h:inputText value="#{gestionCtr.employee.job}" />
+			</h:panelGrid>
+			<h:commandButton action="#{gestionCtr.doAddEmployee()}" value="Add" />
+		</h:form>
+	</p:fieldset>
+	</section>
+</body>
+</html>

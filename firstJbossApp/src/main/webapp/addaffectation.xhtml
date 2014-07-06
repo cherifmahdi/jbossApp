@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/normalizelogin.css" />
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/stylelogin.css" />
+</h:head>
+<body>
+
+<ui:include src="mainmenu.xhtml" />	
+
+<section class="addform cf">	
+	<p:fieldset legend="Add Affectation" id="filedsetform"> 
+	
+		<h:form>
+			<h:panelGrid border="1" columns="2" styleClass="innertable">
+				<h:outputText value="role"></h:outputText>
+				<p:inputText value="#{gestionCtr.affectation.role}" />
+				
+				
+				<h:outputText value="Projet"></h:outputText>
+
+				<p:selectOneMenu id="project"  value="#{gestionCtr.project.idProject}">  
+				    <f:selectItem itemLabel="Selectionner un Projet : "  />  
+				    <f:selectItems value="#{gestionCtr.projects}" var="pr" itemValue="#{pr.idProject}" itemLabel="#{pr.nameProject}"/>
+				</p:selectOneMenu>
+				
+
+
+
+				<h:outputText value="Tache"></h:outputText>
+
+				<p:selectOneMenu id="tache"  value="#{gestionCtr.tache.idTache}">  
+				    <f:selectItem itemLabel="Selectionner une Tache : "  />  
+				    <f:selectItems value="#{gestionCtr.taches}" var="tc" itemValue="#{tc.idTache}" itemLabel="#{tc.nameTache}"/>
+				</p:selectOneMenu>
+				
+				
+				
+				<h:outputText value="Employee"></h:outputText>
+
+				<p:selectOneMenu id="employee"  value="#{gestionCtr.employee.idEmployee}">  
+
+				    <f:selectItem itemLabel="Selectionner un Employee : "  />  
+				    <f:selectItems value="#{gestionCtr.employees}" var="emp" itemValue="#{emp.idEmployee}" itemLabel="#{emp.nameEmployee}"/>
+				</p:selectOneMenu>
+				
+												
+			</h:panelGrid>
+			<p:commandButton action="#{gestionCtr.doAddAffectation()}" value="Add" />
+		</h:form>
+	</p:fieldset>
+</section>
+</body>
+</html>

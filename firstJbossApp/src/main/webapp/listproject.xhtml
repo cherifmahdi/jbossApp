@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+
+	<f:view>
+		<h:form>
+			<h:dataTable border="1" value="#{gestionCtr.dataModelProject}" var="e">
+				<h:column id="column1">
+					<f:facet name="header">
+						<h:outputText value="Project"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{e.nameProject}" />
+				</h:column>
+				<h:column id="column2">
+					<f:facet name="header">
+						<h:outputText value="Description"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{e.description}" />
+				</h:column>
+
+
+				<h:column id="column3">
+					<f:facet name="header">
+						<h:outputText value="Delete"></h:outputText>
+					</f:facet>
+					<h:commandButton action="#{gestionCtr.doDeleteProject}"
+						value="delete" />
+				</h:column>
+
+				<h:column id="column4">
+					<f:facet name="header">
+						<h:outputText value="update"></h:outputText>
+					</f:facet>
+					<h:commandButton action="#{gestionCtr.redirectToUpdatePage}"
+						value="update" />
+				</h:column>
+
+			</h:dataTable>
+		</h:form>
+	</f:view>
+
+</body>
+</html>

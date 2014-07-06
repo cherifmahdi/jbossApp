@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/normalizelogin.css" />
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/stylelogin.css" />
+</h:head>
+<body>
+
+    
+    
+    <h:messages globalOnly="true" />
+	<!-- <section class="loginform cf">
+	<form name="login" action="index_submit" method="get"
+		accept-charset="utf-8">
+		<ul>
+			<li><label for="usermail">Email</label> <input type="email"
+				name="usermail" placeholder="yourname@email.com" required="required" />
+			</li>
+			<li><label for="password">Password</label> <input
+				type="password" name="password" placeholder="password"
+				required="required" /></li>
+			<li><input type="submit" value="Login" /></li>
+		</ul>
+	</form>
+	</section>-->
+
+
+
+
+
+	<section class="loginform cf"> 
+		<h:form name="login" action="index_submit" method="get"
+		accept-charset="utf-8" id="myForm">
+			
+			<ul>
+				<li><label for="usermail">Email</label> 
+				<h:inputText id="email" type="email" name="usermail" pt:placeholder="yourname@email.com" required="required" />
+				
+				</li>
+				
+				<li><label for="password">Password</label> 
+					<h:inputText id="password" type="password" name="password" pt:placeholder="password"
+					required="required" />
+				</li>
+				<li><h:commandButton action="#{sessionCtr.testConn()}" value="Login" /></li>
+			</ul>	
+					
+		</h:form> 
+	</section>
+
+</body>
+</html>

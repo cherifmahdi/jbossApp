@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/normalizelogin.css" />
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/stylelogin.css" />
+</h:head>
+<body> 
+
+
+<ui:include src="mainmenu.xhtml" /> 
+
+
+<section class="addform cf">	
+
+<h:form id="form">  
+  <h:commandLink action="/faces/addtask.xhtml" value="+ New Task" styleClass="inputlink" /> 
+    <p:growl id="messages" showDetail="true"/>  
+  
+    <p:dataTable paginatorAlwaysVisible="true" 
+                 paginator="true" 
+                 paginatorPosition="bottom" 
+                 paginatorTemplate="{CurrentPageReport} {PageLinks} {RowsPerPageDropdown}" 
+                 rows="5" var="car" value="#{gestionCtr.dataModelTache}" id="carList" rowKey="#{e.idEmployee}" editable="true">  
+  
+        <f:facet name="header">  
+            All Tasks
+        </f:facet>  
+  
+        <p:ajax event="rowEdit" listener="#{gestionCtr.onEdit}" update=":form:messages" />  
+        <p:ajax event="rowEditCancel" listener="#{gestionCtr.onCancel}" update=":form:messages" />  
+  
+        <p:column headerText="Tache" style="width:30%">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+                    <h:outputText value="#{car.nameTache}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{car.nameTache}" style="width:100%"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>  
+  
+        <p:column headerText="Description" style="width:20%">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+                    <h:outputText value="#{car.description}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{car.description}" style="width:100%" label="Description"/>  
+                </f:facet>  
+            </p:cellEditor>  
+        </p:column>  
+  
+ 
+  
+ 
+  
+        <p:column style="width:6%">  
+            <p:rowEditor />  
+        </p:column>  
+  
+    </p:dataTable>  
+  
+</h:form>  
+
+
+</section>
+
+ 
+
+</body> 
+</html>
