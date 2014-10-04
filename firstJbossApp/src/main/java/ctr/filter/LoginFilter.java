@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import ctr.SessionCtr;
 
 //@WebFilter(urlPatterns="/filterPage/*")
-@WebFilter("/faces/*")
+@WebFilter("/faces2/*")
 public class LoginFilter implements Filter {
 
 	@Override
